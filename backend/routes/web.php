@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\IngatlanokController;
+use App\Http\Controllers\KategoriakController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/ingatlanok', [IngatlanokController::class, 'index']);
+Route::get('/kategoriak', [KategoriakController::class, 'index']);
+Route::post('/ingatlanok', [IngatlanokController::class, 'store']);
